@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <title>Carregando Portal...</title>
     <style>
-      body, html { background-color: #eef2f7; margin: 0; padding: 0; }
+      body, html { 
+        background-color: #eef2f7; 
+        margin: 0; 
+        padding: 0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .loader {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     </style>
 </head>
 <body oncontextmenu="return false;">
+
+    <div class="loader"></div>
+    
     <noscript>
-      <div style="text-align: center; padding: 50px; font-family: sans-serif;">
-          <h1>JavaScript é necessário.</h1>
+      <div style="text-align: center; font-family: sans-serif; color: #333;">
+          <h1>JavaScript é necessário para visualizar este site.</h1>
       </div>
     </noscript>
 
@@ -31,16 +54,21 @@
               return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
             }).join(''));
           } catch (e) {
+            console.error("Erro ao decodificar o payload. A string Base64 pode estar corrompida.", e);
             return "<h1>Erro ao carregar conteúdo.</h1>";
           }
         };
+
         antiInspect();
-        if (window.payload) {
+        
+        if (typeof payload !== 'undefined') {
           document.open();
-          document.write(decode(window.payload));
+          document.write(decode(payload));
           document.close();
+        } else {
+          document.body.innerHTML = '<h1>Falha ao carregar o arquivo de conteúdo (payload.js).</h1>';
         }
       })();
     </script>
 </body>
-</html>s
+</html>
