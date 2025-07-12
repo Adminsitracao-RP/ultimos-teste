@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" href="bandeirarj.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal RJR - Liderança das Organizações</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      color: #2c3e50;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 600;
+      font-size: 28px;
+      color: #1a1a1a;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .org-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .org-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .org-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .org-header img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #f1f1f1;
+    }
+
+    .status {
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .status-ocupado {
+      background: #ffe0e0;
+      color: #c0392b;
+    }
+
+    .status-livre {
+      background: #fff6d6;
+      color: #d68910;
+    }
+
+    .status-desativado {
+      background: #eeeeee;
+      color: #555;
+    }
+
+    .responsavel {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .responsavel strong {
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Liderança das Organizações Governamentais- RJR</h1>
+
+  <div class="card-container">
+
+    <div class="org-card">
+      <div class="org-header">
+        <img src="pj(1).png" alt="PJEF">
+        Poder Judiciário Estadual/Federal (PJEF)
+      </div>
+      <div class="status status-ocupado">Ocupado 🔴</div>
+      <div class="responsavel"><strong>Responsável:</strong> 𝕷𝖎𝖕𝖊𝕯𝕰𝖁 (1203859335675908149)</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-header">
+        <img src="rjlogo.png" alt="Prefeitura">
+        Prefeito do Rio de Janeiro (PREF-RIO)
+      </div>
+      <div class="status status-livre">Livre 🟡</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Apenas com eleições)</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-header">
+        <img src="rjlogo.png" alt="Vereadores">
+        Vereadores (PREF-RIO)
+      </div>
+      <div class="status status-livre">Livre 🟡</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Apenas em eleições)</div>
+    </div>
+
+<div class="org-card">
+      <div class="org-header">
+        <img src="rjlogo.png" alt="secsec">
+        Secretário de Segurança Pública (GOV-RIO)
+      </div>
+      <div class="status status-livre">Livre 🟡</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Apenas com titulação)</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-header">
+        <img src="rjlogo.png" alt="secfaz">
+        Secretário de Estado da Fazenda (GOV-RIO)
+      </div>
+      <div class="status status-livre">Livre 🟡</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Apenas com titulação)</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-header">
+        <img src="mp(1).jpg" alt="MP">
+        Ministério Público (MP-RIO)
+      </div>
+      <div class="status status-ocupado">Livre 🟡</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Apenas com titulação)</div>
+    </div>
+
+     <div class="org-card">
+      <div class="org-header">
+        <img src="br.png" alt="OAB">
+        Ordem dos Advogados do Brasil (OAB)
+      </div>
+      <div class="status status-ocupado">Livre 🟡</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Apenas com titulação)</div>
+    </div>
+
+<div class="org-card">
+      <div class="org-header">
+        <img src="pmerje.png" alt="PM">
+        Polícia Militar do Estado do Rio de Janeiro (PMERJ)
+      </div>
+      <div class="status status-ocupado">Ocupado 🔴</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Aguarde)</div>
+    </div>
+
+<div class="org-card">
+      <div class="org-header">
+        <img src="pcrj(1).png" alt="PC">
+        Polícia Civil do Estado do Rio de Janeiro (PCERJ)
+      </div>
+      <div class="status status-ocupado">Ocupado 🔴</div>
+      <div class="responsavel"><strong>Responsável:</strong> (Aguarde)</div>
+    </div>
+
+
+<div class="org-card">
+      <div class="org-header">
+        <img src="gmrio.jpg" alt="GM">
+        Guarda Municipal do Rio de Janeiro (GM-RIO)
+      </div>
+      <div class="status status-desativado">Desativado ⚫</div>
+      <div class="responsavel"><strong>Responsável:</strong> -----</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-header">
+        <img src="samu(1).png" alt="SM">
+        Serviço de Atendimento Móvel de Urgência 
+      </div>
+      <div class="status status-desativado">Desativado ⚫</div>
+      <div class="responsavel"><strong>Responsável:</strong> -----</div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-header">
+        <img src="cbm(1).jpg" alt="">
+        Corpo de Bombeiros Militares (CBM-RIO)
+      </div>
+      <div class="status status-desativado">Desativado ⚫</div>
+      <div class="responsavel"><strong>Responsável:</strong> -----</div>
+    </div>
+
+  </div>
+</body>
+</html>
