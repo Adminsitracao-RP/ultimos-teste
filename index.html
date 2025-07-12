@@ -4,63 +4,27 @@
     <meta charset="UTF-8">
     <title>Carregando Portal...</title>
     <style>
-      body, html { 
-        background-color: #eef2f7; 
-        margin: 0; 
-        padding: 0; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-      }
-      .loader {
-        border: 5px solid #f3f3f3;
-        border-top: 5px solid #3498db;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: spin 1s linear infinite;
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
+      body, html { background-color: #eef2f7; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100%; }
+      .loader { border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body oncontextmenu="return false;">
-
     <div class="loader"></div>
-    
-    <noscript>
-      <div style="text-align: center; font-family: sans-serif; color: #333;">
-          <h1>JavaScript é necessário para visualizar este site.</h1>
-      </div>
-    </noscript>
-
-    <!-- 1. Carrega o arquivo com o conteúdo do seu site -->
+    <noscript><div style="text-align: center; font-family: sans-serif; color: #333;"><h1>JavaScript é necessário.</h1></div></noscript>
     <script src="payload.js"></script>
-
-    <!-- 2. Executa a proteção e a decodificação -->
     <script>
       (function() {
-        const antiInspect = function() {
-          setInterval(function() {
-            try { (function() {}).constructor('debugger')(); } catch (e) {}
-          }, 50);
-        };
+        const antiInspect = function() { setInterval(function() { try { (function() {}).constructor('debugger')(); } catch (e) {} }, 50); };
         const decode = function(str) {
           try {
-            return decodeURIComponent(atob(str).split('').map(function(c) {
-              return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
+            return decodeURIComponent(atob(str).split('').map(function(c) { return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2); }).join(''));
           } catch (e) {
-            console.error("Erro ao decodificar o payload. A string Base64 pode estar corrompida.", e);
+            console.error("Erro ao decodificar o payload.", e);
             return "<h1>Erro ao carregar conteúdo.</h1>";
           }
         };
-
         antiInspect();
-        
         if (typeof payload !== 'undefined') {
           document.open();
           document.write(decode(payload));
